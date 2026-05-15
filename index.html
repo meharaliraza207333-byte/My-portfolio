@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ali Raza - Frontend Developer, WordPress Developer & SEO Expert. Professional portfolio showcasing modern web development skills.">
+  <meta name="keywords" content="Frontend Developer, WordPress Developer, SEO Expert, Web Development, Ali Raza">
+  <meta name="author" content="Ali Raza">
+  <title>Ali Raza | Frontend Developer & SEO Expert</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="./Assets/style.css">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <p class="loader-text">Ali Raza</p>
+    </div>
+  </div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particles"></canvas>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="logo">Ali<span>Raza</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#portfolio" class="nav-link">Projects</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-content reveal">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">Ali Raza</h1>
+        <div class="hero-title-wrapper">
+          <span class="hero-title-prefix">I'm a </span>
+          <span class="typed-text" id="typedText"></span>
+          <span class="cursor">|</span>
+        </div>
+        <p class="hero-description">Passionate about crafting beautiful, responsive, and SEO-optimized web experiences that leave a lasting impression.</p>
+        <div class="hero-buttons">
+          <a href="#portfolio" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+        <div class="hero-socials">
+          <a href="mailto:meharaliraza207333@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="tel:03281132589" aria-label="Phone"><i class="fas fa-phone"></i></a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-avatar-ring">
+          <div class="hero-avatar">
+            <img class="hero-avatar-img" src="./Assets/img/ChatGPT Image May 11, 2026, 07_34_24 PM.png" alt="Ali Raza - Frontend Developer">
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-indicator" aria-label="Scroll Down">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <h2 class="section-title reveal"><span>About</span> Me</h2>
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <div class="about-avatar-card">
+            <img class="about-avatar-img" src="./Assets/img/ChatGPT Image May 11, 2026, 07_34_24 PM.png" alt="Ali Raza - Frontend Developer">
+            <div class="about-badge">Frontend Dev</div>
+          </div>
+        </div>
+        <div class="about-content reveal">
+          <h3 class="about-heading">A Passionate Frontend Developer Based in Pakistan</h3>
+          <p>I am a student at <strong>Aptech</strong>, pursuing <strong>HDSE (Higher Diploma in Software Engineering)</strong> with Intermediate completed. I am a passionate frontend developer skilled in modern web technologies.</p>
+          <p>I'm a creative and hardworking developer who loves turning ideas into pixel-perfect, responsive, and SEO-friendly websites. My expertise spans across frontend development, WordPress, and SEO optimization.</p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-number" data-count="11">0</span><span class="stat-plus">+</span>
+              <span class="stat-label">Skills Mastered</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
+              <span class="stat-label">Projects Done</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
+              <span class="stat-label">Services</span>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-primary">Let's Talk</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <h2 class="section-title reveal"><span>My</span> Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card reveal" data-skill="95">
+          <div class="skill-icon"><i class="fab fa-html5"></i></div>
+          <h4>HTML5</h4>
+          <div class="skill-bar"><div class="skill-progress" data-width="95"></div></div>
+          <span class="skill-percent">95%</span>
+        </div>
+        <div class="skill-card reveal" data-skill="90">
+          <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+          <h4>CSS3</h4>
+          <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+          <span class="skill-percent">90%</span>
+        </div>
+        <div class="skill-card reveal" data-skill="80">
+          <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+          <h4>JavaScript</h4>
+          <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+          <span class="skill-percent">80%</span>
+        </div>
+        <div class="skill-card reveal" data-skill="85">
+          <div class="skill-icon"><i class="fab fa-bootstrap"></i></div>
+          <h4>Bootstrap</h4>
+          <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+          <span class="skill-percent">85%</span>
+        </div>
+        <div class="skill-card reveal" data-skill="90">
+          <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h4>Responsive Design</h4>
+          <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+          <span class="skill-percent">90%</span>
+        </div>
+        <div class="skill-card reveal" data-skill="85">
+          <div class="skill-icon"><i class="fab fa-wordpress"></i></div>
+          <h4>WordPress</h4>
+          <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+          <span class="skill-percent">85%</span>
+        </div>
+        <div class="skill-card reveal" data-skill="80">
+          <div class="skill-icon"><i class="fab fa-elementor"></i></div>
+          <h4>Elementor</h4>
+          <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+          <span class="skill-percent">80%</span>
+        </div>
+        <div class="skill-card reveal" data-skill="85">
+          <div class="skill-icon"><i class="fas fa-search"></i></div>
+          <h4>SEO</h4>
+          <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+          <span class="skill-percent">85%</span>
+        </div>
+        <div class="skill-card reveal" data-skill="85">
+          <div class="skill-icon"><i class="fas fa-file-code"></i></div>
+          <h4>On-Page SEO</h4>
+          <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+          <span class="skill-percent">85%</span>
+        </div>
+        <div class="skill-card reveal" data-skill="80">
+          <div class="skill-icon"><i class="fas fa-cogs"></i></div>
+          <h4>Technical SEO</h4>
+          <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+          <span class="skill-percent">80%</span>
+        </div>
+        <div class="skill-card reveal" data-skill="75">
+          <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
+          <h4>UI/UX Design</h4>
+          <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
+          <span class="skill-percent">75%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section services-section">
+    <div class="container">
+      <h2 class="section-title reveal"><span>My</span> Services</h2>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-code"></i></div>
+          <h3>Frontend Development</h3>
+          <p>Building modern, fast, and interactive user interfaces using HTML5, CSS3, JavaScript, and Bootstrap with clean, maintainable code.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fab fa-wordpress"></i></div>
+          <h3>WordPress Development</h3>
+          <p>Creating professional WordPress websites with custom themes, Elementor page builder, and optimized performance for your business.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>SEO Optimization</h3>
+          <p>Improving website visibility with on-page SEO, technical SEO, keyword research, and search engine ranking strategies.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3>Responsive Website Design</h3>
+          <p>Designing pixel-perfect responsive websites that look stunning on all devices — desktops, tablets, and mobile phones.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-rocket"></i></div>
+          <h3>Landing Page Design</h3>
+          <p>Crafting high-converting landing pages with compelling design, clear CTAs, and SEO-optimized structure to boost conversions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="section portfolio-section">
+    <div class="container">
+      <h2 class="section-title reveal"><span>My</span> Projects</h2>
+      <div class="portfolio-grid">
+        <div class="project-card reveal">
+          <div class="project-image">
+            <div class="project-placeholder"><i class="fas fa-shopping-cart"></i></div>
+            <div class="project-overlay">
+              <span class="project-tag">E-Commerce</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Ecommerce Website</h3>
+            <p>Full-featured online store with product listings, cart functionality, and responsive design.</p>
+            <div class="project-tech"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-image">
+            <div class="project-placeholder"><i class="fab fa-wordpress"></i></div>
+            <div class="project-overlay">
+              <span class="project-tag">WordPress</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>WordPress Business Website</h3>
+            <p>Professional business website built with WordPress and Elementor with custom design.</p>
+            <div class="project-tech"><span>WordPress</span><span>Elementor</span><span>CSS3</span></div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-image">
+            <div class="project-placeholder"><i class="fas fa-user-tie"></i></div>
+            <div class="project-overlay">
+              <span class="project-tag">Portfolio</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Portfolio Website</h3>
+            <p>Modern personal portfolio with animations, glassmorphism design, and smooth interactions.</p>
+            <div class="project-tech"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-image">
+            <div class="project-placeholder"><i class="fas fa-search"></i></div>
+            <div class="project-overlay">
+              <span class="project-tag">SEO</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>SEO Optimized Landing Page</h3>
+            <p>High-converting landing page with perfect SEO score and fast loading speed.</p>
+            <div class="project-tech"><span>HTML5</span><span>SEO</span><span>Performance</span></div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-image">
+            <div class="project-placeholder"><i class="fas fa-tachometer-alt"></i></div>
+            <div class="project-overlay">
+              <span class="project-tag">Dashboard</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Admin Dashboard UI</h3>
+            <p>Feature-rich admin dashboard with charts, tables, and modern UI components.</p>
+            <div class="project-tech"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Timeline -->
+  <section id="education" class="section education-section">
+    <div class="container">
+      <h2 class="section-title reveal"><span>My</span> Education</h2>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">Currently Enrolled</span>
+            <h3>HDSE - Higher Diploma in Software Engineering</h3>
+            <h4>Aptech Learning Center</h4>
+            <p>Pursuing advanced software engineering diploma covering full-stack development, databases, and software design principles.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">Completed</span>
+            <h3>Intermediate</h3>
+            <h4>College Education</h4>
+            <p>Successfully completed intermediate education, building a strong academic foundation for software engineering studies.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">Ongoing</span>
+            <h3>Self-Learning & Practice</h3>
+            <h4>Online Platforms & Projects</h4>
+            <p>Continuously learning frontend technologies, WordPress development, and SEO through online courses and hands-on projects.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <h2 class="section-title reveal"><span>Contact</span> Me</h2>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h3>Let's Work Together</h3>
+          <p>Have a project in mind? Let's discuss and bring your ideas to life with modern web solutions.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <h4>Phone</h4>
+                <a href="tel:03281132589">0328-1132589</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <h4>Email</h4>
+                <a href="mailto:meharaliraza207333@gmail.com">meharaliraza207333@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <h4>Location</h4>
+                <p>Pakistan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-group">
+            <input type="text" id="formName" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="formEmail" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <input type="text" id="formSubject" placeholder="Subject" required>
+          </div>
+          <div class="form-group">
+            <textarea id="formMessage" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message <i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#hero" class="logo">Ali<span>Raza</span></a>
+          <p>Frontend Developer | WordPress Developer | SEO Expert</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <a href="tel:03281132589"><i class="fas fa-phone"></i> 0328-1132589</a>
+          <a href="mailto:meharaliraza207333@gmail.com"><i class="fas fa-envelope"></i> meharaliraza207333@gmail.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Raza. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="./Assets/script.js"></script>
+</body>
+</html>
