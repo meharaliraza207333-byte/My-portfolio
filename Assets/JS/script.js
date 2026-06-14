@@ -5,6 +5,47 @@ window.addEventListener('load', () => {
   }, 1200);
 });
 
+/* ========== AOS Animations ========== */
+if (typeof AOS !== 'undefined') {
+  AOS.init({
+    duration: 800,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 80
+  });
+}
+
+/* ========== Theme Toggle (Local Storage) ========== */
+(function initTheme() {
+  const themeToggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+  const storageKey = 'portfolio-theme';
+
+  function setTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    localStorage.setItem(storageKey, theme);
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme') || 'dark';
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  }
+})();
+
+/* ========== Smooth Scroll ========== */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', (e) => {
+    const targetId = anchor.getAttribute('href');
+    if (!targetId || targetId === '#') return;
+    const target = document.querySelector(targetId);
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
 /* ========== Particle Background ========== */
 (function initParticles() {
   const canvas = document.getElementById('particles');
@@ -20,9 +61,7 @@ window.addEventListener('load', () => {
   window.addEventListener('resize', resize);
 
   class Particle {
-    constructor() {
-      this.reset();
-    }
+    constructor() { this.reset(); }
     reset() {
       this.x = Math.random() * w;
       this.y = Math.random() * h;
@@ -44,7 +83,6 @@ window.addEventListener('load', () => {
     }
   }
 
-  // Adjust count based on screen size
   const count = Math.min(Math.floor((w * h) / 12000), 120);
   for (let i = 0; i < count; i++) particles.push(new Particle());
 
@@ -77,7 +115,7 @@ window.addEventListener('load', () => {
 
 /* ========== Typing Animation ========== */
 (function initTyping() {
-  const titles = ['Frontend Developer', 'WordPress Developer', 'SEO Expert'];
+  const titles = ['Frontend Developer', 'WordPress Developer', 'SEO Expert', 'UI/UX Enthusiast'];
   const el = document.getElementById('typedText');
   let titleIndex = 0;
   let charIndex = 0;
@@ -202,6 +240,70 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 counters.forEach(c => counterObserver.observe(c));
 
+/* ========== Portfolio Filter ========== */
+(function initPortfolioFilter() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card[data-category]');
+  if (!filterBtns.length || !projectCards.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const show = filter === 'all' || category === filter;
+        card.classList.toggle('hidden', !show);
+      });
+    });
+  });
+})();
+
+/* ========== Testimonials Slider ========== */
+(function initTestimonialsSlider() {
+  const track = document.getElementById('testimonialsTrack');
+  const dotsContainer = document.getElementById('testimonialDots');
+  const prevBtn = document.getElementById('testimonialPrev');
+  const nextBtn = document.getElementById('testimonialNext');
+  if (!track || !dotsContainer) return;
+
+  const slides = track.querySelectorAll('.testimonial-card');
+  let currentIndex = 0;
+  let autoTimer;
+
+  slides.forEach((_, index) => {
+    const dot = document.createElement('button');
+    dot.className = 'testimonial-dot' + (index === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Go to review ${index + 1}`);
+    dot.addEventListener('click', () => goToSlide(index));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = dotsContainer.querySelectorAll('.testimonial-dot');
+
+  function goToSlide(index) {
+    currentIndex = (index + slides.length) % slides.length;
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+  }
+
+  function startAutoPlay() {
+    autoTimer = setInterval(() => goToSlide(currentIndex + 1), 5000);
+  }
+
+  function resetAutoPlay() {
+    clearInterval(autoTimer);
+    startAutoPlay();
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => { goToSlide(currentIndex - 1); resetAutoPlay(); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { goToSlide(currentIndex + 1); resetAutoPlay(); });
+
+  startAutoPlay();
+})();
+
 /* ========== Back to Top ========== */
 const backToTop = document.getElementById('backToTop');
 window.addEventListener('scroll', () => {
@@ -224,3 +326,4 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
     e.target.reset();
   }, 3000);
 });
+

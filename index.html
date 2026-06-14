@@ -6,12 +6,22 @@
   <meta name="description" content="Ali Raza - Frontend Developer, WordPress Developer & SEO Expert. Professional portfolio showcasing modern web development skills.">
   <meta name="keywords" content="Frontend Developer, WordPress Developer, SEO Expert, Web Development, Ali Raza">
   <meta name="author" content="Ali Raza">
+  <meta property="og:title" content="Ali Raza | Frontend Developer & SEO Expert">
+  <meta property="og:description" content="Passionate about crafting beautiful, responsive, and SEO-optimized web experiences.">
+  <meta property="og:type" content="website">
   <title>Ali Raza | Frontend Developer & SEO Expert</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="./Assets/style.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="Assets/CSS/style.css">
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
 </head>
 <body>
 
@@ -30,18 +40,23 @@
   <nav id="navbar" class="navbar">
     <div class="container nav-container">
       <a href="#hero" class="logo">Ali<span>Raza</span></a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
-        <span></span><span></span><span></span>
-      </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="#hero" class="nav-link active">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#services" class="nav-link">Services</a></li>
         <li><a href="#portfolio" class="nav-link">Projects</a></li>
-        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#reviews" class="nav-link">Reviews</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode">
+          <i class="fas fa-sun theme-icon-light"></i>
+          <i class="fas fa-moon theme-icon-dark"></i>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -60,17 +75,24 @@
         <div class="hero-buttons">
           <a href="#portfolio" class="btn btn-primary">View My Work</a>
           <a href="#contact" class="btn btn-outline">Get In Touch</a>
+          <a href="Assets/cv/Ali_Raza_CV.pdf" target="_blank" rel="noopener" class="btn btn-resume"><i class="fas fa-file-pdf"></i> View CV</a>
         </div>
         <div class="hero-socials">
+          <a href="https://github.com/meharaliraza207333-byte/" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/ali-raza-0301333a9/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/923281132589" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="mailto:meharaliraza207333@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-          <a href="tel:03281132589" aria-label="Phone"><i class="fas fa-phone"></i></a>
         </div>
       </div>
       <div class="hero-visual reveal">
         <div class="hero-avatar-ring">
           <div class="hero-avatar">
-            <img class="hero-avatar-img" src="./Assets/img/ChatGPT Image May 11, 2026, 07_34_24 PM.png" alt="Ali Raza - Frontend Developer">
+            <img class="hero-avatar-img" src="Assets/img/ChatGPT Image May 11, 2026, 07_34_24 PM.png" alt="Ali Raza - Frontend Developer">
           </div>
+        </div>
+        <div class="hero-status">
+          <span class="status-dot"></span> Available for Freelance
         </div>
       </div>
     </div>
@@ -86,14 +108,14 @@
       <div class="about-grid">
         <div class="about-image reveal">
           <div class="about-avatar-card">
-            <img class="about-avatar-img" src="./Assets/img/ChatGPT Image May 11, 2026, 07_34_24 PM.png" alt="Ali Raza - Frontend Developer">
+            <img class="about-avatar-img" src="Assets/img/ChatGPT Image May 11, 2026, 07_34_24 PM.png" alt="Ali Raza - Frontend Developer">
             <div class="about-badge">Frontend Dev</div>
           </div>
         </div>
         <div class="about-content reveal">
-          <h3 class="about-heading">A Passionate Frontend Developer Based in Pakistan</h3>
-          <p>I am a student at <strong>Aptech</strong>, pursuing <strong>HDSE (Higher Diploma in Software Engineering)</strong> with Intermediate completed. I am a passionate frontend developer skilled in modern web technologies.</p>
-          <p>I'm a creative and hardworking developer who loves turning ideas into pixel-perfect, responsive, and SEO-friendly websites. My expertise spans across frontend development, WordPress, and SEO optimization.</p>
+          <h3 class="about-heading">A Passionate Frontend Developer Based in Lahore, Pakistan</h3>
+          <p>I am a student at <strong>Aptech Computer Education</strong>, pursuing <strong>HDSE (Higher Diploma in Software Engineering)</strong>. I work as a <strong>Frontend & SEO Executive</strong> with skills in HTML, CSS, JavaScript, PHP, WordPress, MySQL, and SEO.</p>
+          <p>I'm a creative and hardworking developer who loves turning ideas into pixel-perfect, responsive, and SEO-friendly websites. My expertise spans frontend development, WordPress customization, and search engine optimization.</p>
           <div class="about-stats">
             <div class="stat-item">
               <span class="stat-number" data-count="11">0</span><span class="stat-plus">+</span>
@@ -226,13 +248,22 @@
   <!-- Portfolio Section -->
   <section id="portfolio" class="section portfolio-section">
     <div class="container">
-      <h2 class="section-title reveal"><span>My</span> Projects</h2>
-      <div class="portfolio-grid">
-        <div class="project-card reveal">
+      <h2 class="section-title reveal" data-aos="fade-up"><span>My</span> Projects</h2>
+      <p class="section-subtitle reveal" data-aos="fade-up" data-aos-delay="100">Explore my latest work with live demos and source code.</p>
+      <div class="portfolio-filters reveal" data-aos="fade-up" data-aos-delay="150">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="frontend">Frontend</button>
+        <button class="filter-btn" data-filter="wordpress">WordPress</button>
+        <button class="filter-btn" data-filter="seo">SEO</button>
+      </div>
+      <div class="portfolio-grid" id="portfolioGrid">
+        <article class="project-card reveal" data-aos="fade-up" data-category="frontend">
           <div class="project-image">
-            <div class="project-placeholder"><i class="fas fa-shopping-cart"></i></div>
-            <div class="project-overlay">
-              <span class="project-tag">E-Commerce</span>
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80" alt="Ecommerce Website project preview" loading="lazy">
+            <span class="project-tag">E-Commerce</span>
+            <div class="project-hover">
+              <a href="#" class="btn btn-primary btn-sm project-btn" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="https://github.com/meharaliraza207333-byte" class="btn btn-outline btn-sm project-btn" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
             </div>
           </div>
           <div class="project-info">
@@ -240,12 +271,14 @@
             <p>Full-featured online store with product listings, cart functionality, and responsive design.</p>
             <div class="project-tech"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
           </div>
-        </div>
-        <div class="project-card reveal">
+        </article>
+        <article class="project-card reveal" data-aos="fade-up" data-aos-delay="100" data-category="wordpress">
           <div class="project-image">
-            <div class="project-placeholder"><i class="fab fa-wordpress"></i></div>
-            <div class="project-overlay">
-              <span class="project-tag">WordPress</span>
+            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80" alt="WordPress Business Website project preview" loading="lazy">
+            <span class="project-tag">WordPress</span>
+            <div class="project-hover">
+              <a href="#" class="btn btn-primary btn-sm project-btn" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="https://github.com/meharaliraza207333-byte" class="btn btn-outline btn-sm project-btn" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
             </div>
           </div>
           <div class="project-info">
@@ -253,12 +286,14 @@
             <p>Professional business website built with WordPress and Elementor with custom design.</p>
             <div class="project-tech"><span>WordPress</span><span>Elementor</span><span>CSS3</span></div>
           </div>
-        </div>
-        <div class="project-card reveal">
+        </article>
+        <article class="project-card reveal" data-aos="fade-up" data-aos-delay="200" data-category="frontend">
           <div class="project-image">
-            <div class="project-placeholder"><i class="fas fa-user-tie"></i></div>
-            <div class="project-overlay">
-              <span class="project-tag">Portfolio</span>
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Portfolio Website project preview" loading="lazy">
+            <span class="project-tag">Portfolio</span>
+            <div class="project-hover">
+              <a href="index.html" class="btn btn-primary btn-sm project-btn" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="https://github.com/meharaliraza207333-byte" class="btn btn-outline btn-sm project-btn" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
             </div>
           </div>
           <div class="project-info">
@@ -266,12 +301,14 @@
             <p>Modern personal portfolio with animations, glassmorphism design, and smooth interactions.</p>
             <div class="project-tech"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
           </div>
-        </div>
-        <div class="project-card reveal">
+        </article>
+        <article class="project-card reveal" data-aos="fade-up" data-aos-delay="300" data-category="seo">
           <div class="project-image">
-            <div class="project-placeholder"><i class="fas fa-search"></i></div>
-            <div class="project-overlay">
-              <span class="project-tag">SEO</span>
+            <img src="https://images.unsplash.com/photo-1432888622747-4ebee89a9f89?w=800&q=80" alt="SEO Optimized Landing Page project preview" loading="lazy">
+            <span class="project-tag">SEO</span>
+            <div class="project-hover">
+              <a href="#" class="btn btn-primary btn-sm project-btn" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="https://github.com/meharaliraza207333-byte" class="btn btn-outline btn-sm project-btn" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
             </div>
           </div>
           <div class="project-info">
@@ -279,12 +316,14 @@
             <p>High-converting landing page with perfect SEO score and fast loading speed.</p>
             <div class="project-tech"><span>HTML5</span><span>SEO</span><span>Performance</span></div>
           </div>
-        </div>
-        <div class="project-card reveal">
+        </article>
+        <article class="project-card reveal" data-aos="fade-up" data-aos-delay="400" data-category="frontend">
           <div class="project-image">
-            <div class="project-placeholder"><i class="fas fa-tachometer-alt"></i></div>
-            <div class="project-overlay">
-              <span class="project-tag">Dashboard</span>
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Admin Dashboard UI project preview" loading="lazy">
+            <span class="project-tag">Dashboard</span>
+            <div class="project-hover">
+              <a href="#" class="btn btn-primary btn-sm project-btn" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="https://github.com/meharaliraza207333-byte" class="btn btn-outline btn-sm project-btn" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
             </div>
           </div>
           <div class="project-info">
@@ -292,6 +331,81 @@
             <p>Feature-rich admin dashboard with charts, tables, and modern UI components.</p>
             <div class="project-tech"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
           </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- My Reviews Section -->
+  <section id="reviews" class="section testimonials-section reviews-section">
+    <div class="container">
+      <h2 class="section-title reveal" data-aos="fade-up"><span>My</span> Reviews</h2>
+      <p class="section-subtitle reveal" data-aos="fade-up" data-aos-delay="100">Feedback from clients, mentors, and people I've worked with.</p>
+      <div class="reviews-summary reveal" data-aos="fade-up" data-aos-delay="120">
+        <div class="reviews-summary-item">
+          <strong>4.9</strong>
+          <span>Average Rating</span>
+        </div>
+        <div class="reviews-summary-item">
+          <strong>4+</strong>
+          <span>Total Reviews</span>
+        </div>
+        <div class="reviews-summary-item">
+          <strong>100%</strong>
+          <span>Recommended</span>
+        </div>
+      </div>
+      <div class="testimonials-slider reveal" data-aos="fade-up" data-aos-delay="150">
+        <div class="testimonials-track" id="testimonialsTrack">
+          <div class="testimonial-card">
+            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testimonial-text">"Ali delivered a clean, responsive portfolio that exceeded expectations. His attention to UI details and SEO structure made a real difference for my online presence."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">SA</div>
+              <div>
+                <h4>Sara Ahmed</h4>
+                <span>Small Business Owner</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testimonial-text">"Great communication and fast delivery. The WordPress site was easy to manage and looked professional on all devices. Highly recommended for frontend work."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">HK</div>
+              <div>
+                <h4>Hassan Khan</h4>
+                <span>Freelance Client</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+            <p class="testimonial-text">"Ali shows strong frontend fundamentals and always tries to improve UX. His landing page optimization helped us get better engagement and page speed scores."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">MR</div>
+              <div>
+                <h4>Mentor Review</h4>
+                <span>Aptech Instructor</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testimonial-text">"Professional, creative, and reliable. Ali transformed our basic idea into a modern website with smooth animations and a polished mobile experience."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">AF</div>
+              <div>
+                <h4>Ayesha Fatima</h4>
+                <span>Startup Founder</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-controls">
+          <button class="testimonial-btn" id="testimonialPrev" aria-label="Previous review"><i class="fas fa-chevron-left"></i></button>
+          <div class="testimonial-dots" id="testimonialDots"></div>
+          <button class="testimonial-btn" id="testimonialNext" aria-label="Next review"><i class="fas fa-chevron-right"></i></button>
         </div>
       </div>
     </div>
@@ -360,9 +474,15 @@
               <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
               <div>
                 <h4>Location</h4>
-                <p>Pakistan</p>
+                <p>Lahore, Pakistan</p>
               </div>
             </div>
+          </div>
+          <div class="contact-socials">
+            <a href="https://github.com/meharaliraza207333-byte" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ali-raza-0301333a9/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/923281132589" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           </div>
         </div>
         <form class="contact-form reveal" id="contactForm">
@@ -391,6 +511,13 @@
         <div class="footer-brand">
           <a href="#hero" class="logo">Ali<span>Raza</span></a>
           <p>Frontend Developer | WordPress Developer | SEO Expert</p>
+          <div class="footer-socials">
+            <a href="https://github.com/meharaliraza207333-byte" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ali-raza-0301333a9/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/923281132589" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="mailto:meharaliraza207333@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
         </div>
         <div class="footer-links">
           <h4>Quick Links</h4>
@@ -398,16 +525,18 @@
           <a href="#skills">Skills</a>
           <a href="#services">Services</a>
           <a href="#portfolio">Projects</a>
+          <a href="#reviews">Reviews</a>
           <a href="#contact">Contact</a>
         </div>
         <div class="footer-contact">
           <h4>Contact</h4>
           <a href="tel:03281132589"><i class="fas fa-phone"></i> 0328-1132589</a>
           <a href="mailto:meharaliraza207333@gmail.com"><i class="fas fa-envelope"></i> meharaliraza207333@gmail.com</a>
+          <a href="https://wa.me/923281132589" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Ali Raza. All Rights Reserved.</p>
+        <p>&copy; 2026 Ali Raza. All Rights Reserved. | Crafted with <i class="fas fa-heart" style="color:#7c3aed"></i></p>
       </div>
     </div>
   </footer>
@@ -417,6 +546,7 @@
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <script src="./Assets/script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="Assets/JS/script.js"></script>
 </body>
 </html>
