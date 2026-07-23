@@ -115,8 +115,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 /* ========== Typing Animation ========== */
 (function initTyping() {
-  const titles = ['Frontend Developer', 'WordPress Developer', 'SEO Expert', 'UI/UX Enthusiast'];
+  const titles = ['Web Developer', 'PHP / Laravel Developer', 'WordPress Developer', 'Frontend Developer', 'SEO Expert'];
   const el = document.getElementById('typedText');
+  if (!el) return;
   let titleIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
@@ -156,18 +157,19 @@ window.addEventListener('scroll', () => {
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 
-menuToggle.addEventListener('click', () => {
-  menuToggle.classList.toggle('active');
-  navLinks.classList.toggle('open');
-});
-
-// Close menu on link click
-navLinks.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    menuToggle.classList.remove('active');
-    navLinks.classList.remove('open');
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navLinks.classList.toggle('open');
   });
-});
+
+  navLinks.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      navLinks.classList.remove('open');
+    });
+  });
+}
 
 /* ========== Active Nav Link on Scroll ========== */
 const sections = document.querySelectorAll('section[id]');
@@ -306,24 +308,47 @@ counters.forEach(c => counterObserver.observe(c));
 
 /* ========== Back to Top ========== */
 const backToTop = document.getElementById('backToTop');
-window.addEventListener('scroll', () => {
-  backToTop.classList.toggle('visible', window.scrollY > 500);
-});
-backToTop.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+if (backToTop) {
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('visible', window.scrollY > 500);
+  });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
 /* ========== Contact Form ========== */
-document.getElementById('contactForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const btn = e.target.querySelector('button');
-  const originalText = btn.innerHTML;
-  btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-  btn.style.background = 'linear-gradient(135deg, #06b6d4, #7c3aed)';
-  setTimeout(() => {
-    btn.innerHTML = originalText;
-    btn.style.background = '';
-    e.target.reset();
-  }, 3000);
-});
+(function initContactForm() {
+  const contactForm = document.getElementById('contactForm');
+  const formStatus = document.getElementById('formStatus');
+  const formNext = document.getElementById('formNext');
+  const FORM_EMAIL = 'meharaliraza207333@gmail.com';
+
+  if (formNext) {
+    const returnUrl = `${window.location.origin}${window.location.pathname}?sent=1#contact`;
+    formNext.value = returnUrl;
+  }
+
+  if (new URLSearchParams(window.location.search).get('sent') === '1') {
+    if (formStatus) {
+      formStatus.textContent = 'Thank you! Your message was sent successfully.';
+      formStatus.className = 'form-status success';
+    }
+    history.replaceState(null, '', `${window.location.pathname}#contact`);
+  }
+
+  if (!contactForm) return;
+
+  contactForm.addEventListener('submit', (e) => {
+    const btn = contactForm.querySelector('button[type="submit"]');
+    if (btn) {
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    }
+    if (formStatus) {
+      formStatus.textContent = 'Sending your message...';
+      formStatus.className = 'form-status';
+    }
+  });
+})();
 
