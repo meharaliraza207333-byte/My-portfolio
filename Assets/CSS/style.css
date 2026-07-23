@@ -64,7 +64,7 @@ img { max-width: 100%; display: block; }
 .nav-actions { display: flex; align-items: center; gap: 10px; margin-left: 12px; flex-shrink: 0; }
 .logo { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; color: var(--text-primary); flex-shrink: 0; display: flex; align-items: center; gap: 10px; }
 .logo span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.logo-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid transparent; background-image: var(--gradient); background-origin: border-box; background-clip: padding-box, border-box; box-shadow: 0 2px 12px rgba(124, 58, 237, 0.25); transition: var(--transition); }
+.logo-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid var(--accent); box-shadow: 0 2px 12px rgba(124, 58, 237, 0.25); transition: var(--transition); }
 .logo:hover .logo-img { transform: scale(1.1); box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4); }
 .logo-text { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; }
 .logo-text span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
